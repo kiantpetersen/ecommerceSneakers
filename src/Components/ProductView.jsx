@@ -19,15 +19,13 @@ function ProductView(props) {
         setImg(e.target.src)
         imageContainer.classList.add('viewing')
     }
-    function handleChange(e) {
-        e.target.style.border = 'solid 5px red'
-    }
+
     return (
         <div className='product-section'>
             <div className='grid grid-2--cols'>
                 <div className='col'>
-                    <div className='primary-product-img-container'>
-                        <img onChange={handleChange} className='primary-product-img' src={mainImg} alt='primary_produc_img' />
+                    <div onClick={props.viewOverlay} className='primary-product-img-container'>
+                        <img className='primary-product-img' src={mainImg} alt='primary_produc_img' />
                     </div>
                     <div className='images-selector-container '>
                         <div onClick={handleFocus} className='secondary-img-container viewing'>
@@ -70,7 +68,6 @@ function ProductView(props) {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }

@@ -1,17 +1,21 @@
 import { useState } from 'react'
 import Header from './Components/Header'
 import ProductView from './Components/ProductView'
+import ProductOverlay from './Components/ProductOverlay'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [visible, setVisibility] = useState(false)
 
   return (
-    <>
+    <div className='App'>
       <Header />
-      <ProductView />
+      <ProductView viewOverlay={() => setVisibility(prev => !prev)} />
 
-    </>
+      {visible ? <ProductOverlay viewOverlay={() => setVisibility(prev => !prev)} /> : null}
+
+
+    </div>
   )
 }
 
