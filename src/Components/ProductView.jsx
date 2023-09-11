@@ -1,30 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import productImg1 from '../images/image-product-1.jpg'
-import productImg2 from '../images/image-product-1.jpg'
-import productImg3 from '../images/image-product-1.jpg'
-import productImg4 from '../images/image-product-1.jpg'
+import productImg2 from '../images/image-product-2.jpg'
+import productImg3 from '../images/image-product-3.jpg'
+import productImg4 from '../images/image-product-4.jpg'
 import productImg5 from '../images/image-product-1.jpg'
 
 function ProductView(props) {
+    const [value, setValue] = useState(1)
+    const [mainImg, setImg] = useState(productImg1)
+    function handleFocus(e) {
+        const imageContainer = e.target.closest('.secondary-img-container')
+        const imagesHolder = e.target.closest('.images-selector-container')
+        const children = Array.from(imagesHolder.children)
+        children.forEach(child => {
+            child.classList.remove('viewing')
+        })
+
+        setImg(e.target.src)
+        imageContainer.classList.add('viewing')
+    }
+    function handleChange(e) {
+        e.target.style.border = 'solid 5px red'
+    }
     return (
         <div className='product-section'>
             <div className='grid grid-2--cols'>
                 <div className='col'>
                     <div className='primary-product-img-container'>
-                        <img className='primary-product-img' src={productImg1} alt='primary_produc_img' />
+                        <img onChange={handleChange} className='primary-product-img' src={mainImg} alt='primary_produc_img' />
                     </div>
-                    <div className='images-selector-container'>
-                        <div className='secondary-img-container'>
+                    <div className='images-selector-container '>
+                        <div onClick={handleFocus} className='secondary-img-container viewing'>
                             <img src={productImg1} alt='secondary_img' className='secondary-img' />
                         </div>
-                        <div className='secondary-img-container'>
-                            <img src={productImg1} alt='secondary_img' className='secondary-img' />
+                        <div onClick={handleFocus} className='secondary-img-container'>
+                            <img src={productImg2} alt='secondary_img' className='secondary-img' />
                         </div>
-                        <div className='secondary-img-container'>
-                            <img src={productImg1} alt='secondary_img' className='secondary-img' />
+                        <div onClick={handleFocus} className='secondary-img-container'>
+                            <img src={productImg3} alt='secondary_img' className='secondary-img' />
                         </div>
-                        <div className='secondary-img-container'>
-                            <img src={productImg1} alt='secondary_img' className='secondary-img' />
+                        <div onClick={handleFocus} className='secondary-img-container'>
+                            <img src={productImg4} alt='secondary_img' className='secondary-img' />
                         </div>
                     </div>
                 </div>
@@ -38,9 +54,13 @@ function ProductView(props) {
                         <h4 className='product-full-price'>$300.00</h4>
                         <div className='product-btn-container'>
                             <div className='product-amount-container'>
-                                <button className='amount-btn'>+</button>
-                                <p className='product-amount-value'>3</p>
-                                <button className='amount-btn'>-</button>
+                                <button onClick={() => { setValue(prev => prev + 1) }} className='amount-btn'>+</button>
+                                <p className='product-amount-value'>{value}</p>
+                                <button onClick={() => {
+                                    setValue(prev => {
+                                        return prev === 0 ? 0 : prev - 1
+                                    })
+                                }} className='amount-btn'>-</button>
                             </div>
                             <button className='cart-btn'>
                                 <ion-icon size="small" name="cart-outline"></ion-icon>
