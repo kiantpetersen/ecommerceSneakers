@@ -128,13 +128,14 @@ body {
 }
 .cart-container {
   position: absolute;
-  width: 300px;
+  width: 350px;
   visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   right: 0%;
+  background-color: #fff;
   top: 100%;
   /* border: solid 1px #8f8f8f; */
   box-shadow: 5px 5px 5px 5px #888888;
@@ -144,12 +145,24 @@ body {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
+.cart-item-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cart-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+  width: 100%;
+}
 .cart-heading {
   width: 90%;
   margin: 0;
   padding: 20px 10px;
   font-size: 20px;
-  border-bottom: solid 1px #8f8f8f;
+  border-bottom: solid 1px #dadada;
 }
 .cart-item-list {
   display: flex;
@@ -159,6 +172,78 @@ body {
 .cart-default-text {
   padding: 40px;
   color: #8f8f8f;
+}
+.cart-img-container {
+  height: 50px;
+  margin: 0 5px;
+  width: 50px;
+  object-fit: contain;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.cart-item-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.item-name {
+  margin: 0;
+  font-size: 14px;
+  color: #888888;
+}
+.item-price {
+  margin: 0;
+  font-size: 14px;
+  color: #888888;
+}
+.total-price {
+  color: #000;
+  font-weight: 700;
+}
+.cart-checkout-btn {
+  background-color: orangered;
+  font-weight: 700;
+  width: 90%;
+  margin: 5px auto;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.3s;
+  padding: 15px;
+  color: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.cart-checkout-btn:hover {
+  opacity: 0.6;
+}
+.cart-delete-icon {
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+.cart-delete-icon:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
 }
 
 /* //////////////////////////// */
