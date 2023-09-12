@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import productImg1 from '../images/image-product-1.jpg'
 import productImg2 from '../images/image-product-2.jpg'
 import productImg3 from '../images/image-product-3.jpg'
@@ -8,6 +9,19 @@ import productImg5 from '../images/image-product-1.jpg'
 function ProductView(props) {
     const [value, setValue] = useState(1)
     const [mainImg, setImg] = useState(productImg1)
+
+    function handleClick(e) {
+        e.preventDefault()
+
+        const name = document.querySelector('.product-name').innerHTML
+        const price = document.querySelector('.product-price').dataset.price
+        const img = document.querySelector('.primary-product-img').src
+
+
+        props.addCart({ id: uuidv4(), name: name, price: price, amount: value, img: img })
+        setValue(1)
+
+    }
     function handleFocus(e) {
         const imageContainer = e.target.closest('.secondary-img-container')
         const imagesHolder = e.target.closest('.images-selector-container')
@@ -19,6 +33,7 @@ function ProductView(props) {
         setImg(e.target.src)
         imageContainer.classList.add('viewing')
     }
+
 
     return (
         <div className='product-section'>
@@ -48,7 +63,7 @@ function ProductView(props) {
                         <p className='company-name'>SNEAKER COMPANY</p>
                         <h2 className='product-name'>Fall Limited Edition Sneakers</h2>
                         <p className='product-description'>I have brought peace freedom justice and security to my new Empire. Your new Empire? Anikan my allegiance is the the Republic, to Democracy. Don't make me kill you. Only a sith deals in absolutes, I will do what I must. You will try</p>
-                        <h2 className='product-price'>$245.99</h2>
+                        <h2 data-price={245.99} className='product-price'>$245.99</h2>
                         <h4 className='product-full-price'>$300.00</h4>
                         <div className='product-btn-container'>
                             <div className='product-amount-container'>
@@ -60,7 +75,7 @@ function ProductView(props) {
                                     })
                                 }} className='amount-btn'>-</button>
                             </div>
-                            <button className='cart-btn'>
+                            <button onClick={handleClick} className='cart-btn'>
                                 <ion-icon size="small" name="cart-outline"></ion-icon>
                                 Add to cart
                             </button>

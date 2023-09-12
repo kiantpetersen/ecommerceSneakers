@@ -261,8 +261,8 @@ body {
   justify-content: center;
 }
 .primary-product-img-container {
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 350px;
   margin: 10px 0;
   overflow: hidden;
   cursor: pointer;
@@ -434,8 +434,8 @@ body {
 .overlay-img-container {
   position: relative;
   display: flex;
-  height: 400px;
-  width: 400px;
+  height: 450px;
+  width: 450px;
   /* overflow: hidden; */
   border-radius: 10px;
   -webkit-border-radius: 10px;

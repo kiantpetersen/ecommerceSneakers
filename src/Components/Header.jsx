@@ -4,7 +4,8 @@ import productImg1 from '../images/image-product-1.jpg'
 
 function Header(props) {
     const [visibility, setVisibility] = useState(false)
-    const [cartItems, setCartItems] = useState([])
+    const cartItems = props.cartItems
+
     function handleClick(e) {
         const cartContainer = document.querySelector('.cart-container')
 
@@ -18,16 +19,17 @@ function Header(props) {
 
         }
     }
-    function getItem() {
-        return <div className='cart-item-container'>
+
+    function getItem(item) {
+        return <div key={item.id} className='cart-item-container'>
             <div className='cart-img-container'>
-                <img src={productImg1} className='cart-item-img' alt='Item_image' />
+                <img src={item.img} className='cart-item-img' alt='Item_image' />
             </div>
             <div className='cart-item-textbox'>
-                <p className='item-name'>Fall Limited Edition Sneackers</p>
-                <p className='item-price'>$125.00 x 3 <span className='total-price'>$420.69</span></p>
+                <p className='item-name'>{item.name}</p>
+                <p className='item-price'>${item.price} x {item.amount} <span className='total-price'>${item.price * item.amount}</span></p>
             </div>
-            <div className='cart-delete-icon'>
+            <div onClick={() => { props.deleteItem(item) }} className='cart-delete-icon'>
                 <ion-icon name="trash-outline"></ion-icon>
             </div>
         </div>
@@ -36,7 +38,7 @@ function Header(props) {
         return (
             <div className='cart-item-list'>
                 {cartItems.map((item, key) => {
-                    return getItem()
+                    return getItem(item)
                 })}
 
                 <button className='cart-checkout-btn'>Checkout</button>
