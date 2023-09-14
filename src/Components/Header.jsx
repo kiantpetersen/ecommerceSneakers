@@ -48,7 +48,9 @@ function Header(props) {
     return (
         <header className='sneaker-nav'>
             <div className='nav-container'>
-
+                <div className='nav-menu-icon'>
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
                 <h2 className='sneaker-nav-heading'>sneakers</h2>
                 <ul className='sneaker-nav-list'>
                     <li className='sneaker-nav-item'><a href='/' className='sneaker-nav-link'>Collections</a></li>
@@ -60,7 +62,7 @@ function Header(props) {
             </div>
             <div className='nav-container'>
                 <div onClick={handleClick} className='nav-icon-container'>
-                    <ion-icon size="large" name="cart-outline"></ion-icon>
+                    <ion-icon name="cart-outline"></ion-icon>
                 </div>
                 <div className='nav-user-img-container'>
                     <img className='nav-user-img' src={userImg} alt='nav_user_img' />

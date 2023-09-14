@@ -3,6 +3,7 @@ import Header from './Components/Header'
 import ProductView from './Components/ProductView'
 import ProductOverlay from './Components/ProductOverlay'
 import './App.css'
+import './queries.css'
 
 function App() {
   const [visible, setVisibility] = useState(false)

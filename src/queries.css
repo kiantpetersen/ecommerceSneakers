@@ -1,0 +1,118 @@
+@media only screen and (max-width: 1200px) {
+}
+@media only screen and (max-width: 992px) {
+  .grid {
+    display: grid;
+    gap: 20px;
+  }
+  .grid-2--cols {
+    grid-template-columns: 1fr;
+  }
+  .sneaker-nav-list {
+    display: none;
+  }
+  .images-selector-container {
+    display: none;
+  }
+  .primary-product-img-container {
+    position: relative;
+  }
+  .mobile-product {
+    visibility: visible;
+    margin: 0 10px;
+  }
+  .mobile-next {
+    right: 0;
+  }
+  .product-overlay {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 600px) {
+}
+@media only screen and (max-width: 490px) {
+  .sneaker-nav {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    height: 40px;
+    top: 0;
+    z-index: 20;
+  }
+  .nav-user-img-container {
+    height: 30px;
+    width: 30px;
+  }
+  .nav-menu-icon ion-icon {
+    font-size: 20px;
+  }
+  .nav-icon-container ion-icon {
+    font-size: 20px;
+  }
+  .cart-container {
+    width: 300px;
+    right: 10px;
+  }
+  .grid {
+    width: 100%;
+  }
+  .product-section {
+    padding: 0 0 40px 0;
+    margin: 60px 0 0 0;
+    width: 100%;
+  }
+  .product-container {
+    padding: 0 20px;
+  }
+
+  .col {
+    width: 100%;
+    height: 100%;
+  }
+  .primary-product-img-container {
+    width: 100%;
+    margin: 0;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+  }
+  .product-btn-container {
+    flex-direction: column;
+  }
+  .price-info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .product-amount-container {
+    width: 100%;
+    margin: 10px 0;
+    justify-content: space-evenly;
+  }
+  .cart-btn {
+    width: 100%;
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .company-name {
+    margin: 10px 0;
+  }
+  .product-name {
+    font-size: 32px;
+  }
+  .product-price {
+    font-size: 28px;
+  }
+  .discount-amount {
+    color: orangered;
+    font-size: 18px;
+  }
+}
