@@ -45,10 +45,33 @@ function Header(props) {
             </div>)
 
     }
+    function viewMobileNav() {
+        const mobileNav = document.querySelector('.mobile-nav')
+        const mobileOverlay = document.querySelector('.mobile-overlay')
+        console.log('Target: ', mobileNav)
+        mobileNav.style.display = 'block';
+        mobileNav.style.width = '200px'
+        mobileOverlay.style.display = 'block';
+        mobileOverlay.style.width = '100%'
+    }
+
+    function exitMobileNav() {
+        const mobileNav = document.querySelector('.mobile-nav')
+        const mobileOverlay = document.querySelector('.mobile-overlay')
+
+
+        console.log('Target: ', mobileNav)
+        mobileNav.style.display = 'none';
+        mobileNav.style.width = '000px'
+
+        mobileOverlay.style.display = 'none';
+        mobileOverlay.style.width = '00'
+
+    }
     return (
         <header className='sneaker-nav'>
             <div className='nav-container'>
-                <div className='nav-menu-icon'>
+                <div onClick={viewMobileNav} className='nav-menu-icon'>
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
                 <h2 className='sneaker-nav-heading'>sneakers</h2>
@@ -76,6 +99,17 @@ function Header(props) {
                 {/* <p className='cart-default-text'>your cart is empty</p> */}
                 {/* </div> */}
 
+            </div>
+            <div onClick={exitMobileNav} className='mobile-overlay'></div>
+            <div className='mobile-nav'>
+                <div onClick={exitMobileNav} className='mobile-exit-icon'><ion-icon size="large" name="close-outline"></ion-icon> </div>
+                <ul className='mobile-nav-list'>
+                    <li className='mobile-nav-list-item'><a className='mobile-nav-link' href='/'>Collections</a></li>
+                    <li className='mobile-nav-list-item'><a className='mobile-nav-link' href='/'>Men</a></li>
+                    <li className='mobile-nav-list-item'><a className='mobile-nav-link' href='/'>Women</a></li>
+                    <li className='mobile-nav-list-item'><a className='mobile-nav-link' href='/'>About</a></li>
+                    <li className='mobile-nav-list-item'><a className='mobile-nav-link' href='/'>Contact</a></li>
+                </ul>
             </div>
 
         </header>

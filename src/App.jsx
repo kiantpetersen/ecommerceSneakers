@@ -23,8 +23,6 @@ function App() {
       <ProductView addCart={addCart} viewOverlay={() => setVisibility(prev => !prev)} />
 
       {visible ? <ProductOverlay viewOverlay={() => setVisibility(prev => !prev)} /> : null}
-
-
     </div>
   )
 }

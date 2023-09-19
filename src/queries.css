@@ -27,6 +27,15 @@
   .product-overlay {
     display: none;
   }
+  /* ///////////// */
+  /* Mobile Nav */
+  .mobile-nav {
+    display: none;
+    width: 00px;
+  }
+  .nav-menu-icon {
+    display: flex;
+  }
 }
 @media only screen and (max-width: 768px) {
 }

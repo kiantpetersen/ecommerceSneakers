@@ -47,7 +47,7 @@ body {
   height: fit-content;
 }
 .nav-menu-icon {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   margin: 0 10px;
@@ -547,4 +547,74 @@ body {
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
+}
+
+/* ////////////////////////////// */
+/* Mobile Navigation */
+/* ////////////////////////////// */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  display: none;
+  height: 100%;
+  width: 000px;
+  background-color: #fff;
+  z-index: 100;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.mobile-nav-list-item {
+  padding: 10px 0;
+}
+.mobile-nav-link:hover {
+  border-bottom: #888888 solid 1px;
+}
+
+.mobile-nav-link {
+  text-decoration: none;
+  color: #888888;
+  padding: 5px 0;
+  margin: 5px 0;
+  font-size: 20px;
+  border-bottom: transparent solid 1px;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+.mobile-overlay {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #000000af;
+  z-index: 90;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.mobile-exit-icon {
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+.mobile-exit-icon:hover {
+  color: orangered;
 }
