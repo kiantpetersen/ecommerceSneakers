@@ -87,20 +87,20 @@ function ProductView(props) {
 
                         <p className='company-name'>SNEAKER COMPANY</p>
                         <h2 className='product-name'>Fall Limited Edition Sneakers</h2>
-                        <p className='product-description'>I have brought peace freedom justice and security to my new Empire. Your new Empire? Anikan my allegiance is the the Republic, to Democracy. Don't make me kill you. Only a sith deals in absolutes, I will do what I must. You will try</p>
+                        <p className='product-description'>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand anything the weather can offer</p>
                         <div className='price-info-container'>
-                            <h2 data-price={245.99} className='product-price'>$245.99 <span className='discount-amount'>50%</span></h2>
-                            <h4 className='product-full-price'><s>$300.00</s></h4>
+                            <h2 data-price={125} className='product-price'>$125.00 <span className='discount-amount'>50%</span></h2>
+                            <h4 className='product-full-price'><s>$250.00</s></h4>
                         </div>
                         <div className='product-btn-container'>
                             <div className='product-amount-container'>
-                                <button onClick={() => { setValue(prev => prev + 1) }} className='amount-btn'>+</button>
-                                <p className='product-amount-value'>{value}</p>
                                 <button onClick={() => {
                                     setValue(prev => {
                                         return prev === 0 ? 0 : prev - 1
                                     })
                                 }} className='amount-btn'>-</button>
+                                <p className='product-amount-value'>{value}</p>
+                                <button onClick={() => { setValue(prev => prev + 1) }} className='amount-btn'>+</button>
                             </div>
                             <button onClick={handleClick} className='cart-btn'>
                                 <ion-icon size="small" name="cart-outline"></ion-icon>
